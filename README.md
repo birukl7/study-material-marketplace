@@ -1,66 +1,52 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Study Material Marketplace
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+The Study Material Marketplace is a Laravel Breeze and Blade template project designed to facilitate the exchange of educational resources among university students. Users can upload, buy, and sell resources such as lecture notes, study guides, and past exam papers.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **User Registration**: Students can register for an account to access the platform's features.
+- **Resource Upload**: Users can upload educational materials for sale.
+- **Resource Purchase**: Buyers can browse and purchase resources, with the option to preview before buying.
+- **User Dashboard**: Sellers can manage their resources and sales through a dedicated dashboard.
+- **Rating and Review System**: Users can provide feedback on purchased resources through ratings and reviews.
+- **Content Moderation**: Moderation features ensure compliance with academic integrity standards.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Database
 
-## Learning Laravel
+The project uses a MySQL database named "study-material-marketplace" to store user data, resources, purchases, and other relevant information.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Repository
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+The project repository can be found at [study-material-marketplace](https://github.com/study-material-marketplace).
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+We welcome contributions from group members to improve the Study Material Marketplace project. To contribute, follow these steps:
 
-## Code of Conduct
+1. **Fork the Repository**: Click the "Fork" button on the repository page to create your own copy of the project.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+2. **Clone the Repository**: Clone the forked repository to your local machine using the following command: git clone https://github.com/your-username/study-material-marketplace.git
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+3. **Install Dependencies**: Navigate to the project directory and install Composer dependencies using the following command:
+
+<button>composer install</button>
+
+
+4. **Set Up Laravel**: Set up the Laravel environment by running the following command:
+php artisan key:generate
+
+
+5. **Make Changes**: Make your desired changes or additions to the project.
+
+6. **Commit Changes**: Commit your changes to your forked repository.
+
+7. **Push Changes**: Push your changes to your forked repository on GitHub.
+
+8. **Submit a Pull Request**: Once you've pushed your changes, submit a pull request from your forked repository to the main repository.
+
+
+
