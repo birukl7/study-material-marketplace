@@ -18,7 +18,7 @@ The project uses a MySQL database named "study-material-marketplace" to store us
 
 ## Repository
 
-The project repository can be found at [study-material-marketplace](https://github.com/study-material-marketplace).
+The project repository can be found at [study-material-marketplace](https://github.com/birukl7/study-material-marketplace).
 
 ## Contributing
 
