@@ -26,19 +26,11 @@ We welcome contributions from group members to improve the Study Material Market
 
 1. **Fork the Repository**: Click the "Fork" button on the repository page to create your own copy of the project.
 
-2. **Clone the Repository**: Clone the forked repository to your local machine using the following command: git clone https://github.com/your-username/study-material-marketplace.git
+2. **Clone the Repository**: Clone the forked repository to your local machine using the following command:  `git clone https://github.com/your-username/study-material-marketplace.git`
 
+3. **Install Dependencies**: Navigate to the project directory and install Composer dependencies using the following command: `composer install`
 
-
-
-3. **Install Dependencies**: Navigate to the project directory and install Composer dependencies using the following command:
-
-<button>composer install</button>
-
-
-4. **Set Up Laravel**: Set up the Laravel environment by running the following command:
-php artisan key:generate
-
+4. **Set Up Laravel**: Set up the Laravel environment by running the following command: `php artisan key:generate`
 
 5. **Make Changes**: Make your desired changes or additions to the project.
 
