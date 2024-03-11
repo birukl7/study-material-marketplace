@@ -12,13 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('seller_dashboards', function (Blueprint $table) {
-            $table->increments('id');
-            $table->index('seller_id');
-            $table->foreign('seller_id')->references('id')->on('users')->onDelete('cascade');
+            $table->id();
+            $table->foreignId('seller_id')->constrained('users')->cascadeOnDelete();
             $table->integer('sales_count');
             $table->double('earnings');
             $table->timestamps();
-
         });
     }
 

@@ -12,13 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('resource_collections', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->integer('resource_id')->unsigned();
-            $table->foreign('resource_id')->references('id')->on('resources')->onDelete('cascade');
+            $table->id();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('resource_id')->constrained()->cascadeOnDelete();
             $table->date('purchase_date')->nullable();
             $table->timestamps();
-
         });
     }
 

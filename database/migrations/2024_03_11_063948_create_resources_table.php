@@ -12,14 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('resources', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('title');
             $table->string('description');
             $table->string('file_url');
             $table->double('price');
-            $table->integer('category_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->integer('seller_id')->unsigned();
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('seller_id')->constrained('users')->cascadeOnDelete();
             $table->date('upload_date');
             $table->timestamps();
         });

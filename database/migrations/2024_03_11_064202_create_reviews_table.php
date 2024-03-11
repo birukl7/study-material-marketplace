@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
-        Schema::create('resources', function (Blueprint $table) {
-            $table->foreign('seller_id')->references('id')->on('users')->onDelete('cascade');
+        Schema::create('reviews', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('resource_id');
+            $table->date('rating_date');
+            $table->timestamps();
         });
     }
 
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('reviews');
     }
 };
