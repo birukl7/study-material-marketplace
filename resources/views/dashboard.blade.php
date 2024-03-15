@@ -8,9 +8,15 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                @auth()
                 <div class="p-6 text-gray-900 ">
                     {{ __("You're logged in!") }}
                 </div>
+                @else
+                <div class="p-6 text-gray-900 ">
+                    {{ __("You're not logged in!") }}
+                </div>
+                @endauth
             </div>
         </div>
     </div>
@@ -22,7 +28,7 @@
                     <img src="/images/profile-pic.jpg" alt="" class="w-20 h-20 object-cover rounded-full">
                 </div>
                 <div>
-                    <h2 class="text-3xl font-semibold">Biruk</h2>
+                    <h2 class="text-3xl font-semibold">{{ auth()->user()->name }}</h2>
                     <div class="flex gap-x-2">
                         <img src="/images/rating-40.png" class="w-20" alt="">
                         <span>4.10 (<span>20</span>) Ratings</span>
@@ -40,7 +46,7 @@
                 <li class="w-full px-10 hover:bg-slate-200 hover:text-slate-inherit py-3 text-md rounded-md"><a href="#">Reviews</a></li>
                 <hr class="h-0.5 bg-slate-400">
                 <li class="w-full px-10 hover:bg-slate-200 hover:text-slate-inherit py-3 text-md rounded-md"><a href="#">Achevments</a></li>
-                <li class="w-full px-10 hover:bg-slate-200 hover:text-slate-inherit py-3 text-md rounded-md"><a href="/logout">Logout</a></li>
+                <li class="w-full px-10 hover:bg-slate-200 hover:text-slate-inherit py-3 text-md rounded-md"><a href="{{ route('logout')}}">Logout</a></li>
             </ul>
             <div class="flex-1">
                 <div class="p-3 ">
