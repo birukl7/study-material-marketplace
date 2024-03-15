@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the  review.
      */
     public function index()
     {
-        //
+        // Fetch all reviews from the database
+        $reviews = Review::all();
+
+        // Return the view to display all reviews
+        return view('reviews.index', compact('reviews'));
     }
 
     /**
@@ -19,7 +24,8 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        //
+        // Return the view for creating a review
+        return view('reviews.create');
     }
 
     /**
@@ -27,38 +33,57 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validating the data
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'rating' => 'required|numeric|min:1|max:5',
+        ]);
+
+        // Create a new review using the validated data
+        $review = Review::create($validatedData);
+
+        // Redirect to the review's details page
+        return redirect()->route('reviews.show', $review->id);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Review $review)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        // Return the view to display the review details
+        return view('reviews.show', compact('review'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Review $review)
     {
-        //
+        // Validate the input fields
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'rating' => 'required|numeric|min:1|max:5',
+        ]);
+
+        // Update the review using the validated data
+        $review->update($validatedData);
+
+        // Redirect to the review's details page
+        return redirect()->route('reviews.show', $review->id);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Review $review)
     {
-        //
+         // Delete the review
+         $review->delete();
+
+         // Redirect to the reviews index page
+         return redirect()->route('reviews.index');
     }
 }
