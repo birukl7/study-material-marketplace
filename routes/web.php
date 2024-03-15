@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReviewController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +27,9 @@ Route::get('/resource', function (){
 Route::get('/resource/detail', function(){
     return view('resource.detail');
 });
+
+// review
+Route::resource('reviews', ReviewController::class);
 
 Route::get('/purchase', function(){
     return view('purchase.detail');
