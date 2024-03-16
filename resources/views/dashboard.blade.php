@@ -35,9 +35,11 @@
                     </div>
                 </div>
             </div>
-            <div class="">
-                <button class="outline p-3 outline-1 hover:bg-black hover:outline-none hover:text-slate-100 transition duration-500 ease-in-out rounded-xl">Sell a material</button>
-            </div>
+            <a href={{ url('resources.create')}}>
+                <div class="">
+                    <button class="outline p-3 outline-1 hover:bg-black hover:outline-none hover:text-slate-100 transition duration-500 ease-in-out rounded-xl">Sell a material</button>
+                </div>
+            </a>
         </div>
         <div class="flex">
             <ul class="w-1/4 flex flex-col border-r border-slate-400 py-5">
@@ -53,7 +55,7 @@
                     <h1 class="text-xl font-semibold">Materials Dashboard</h1>
                     <ul class="flex justify-start pt-5 gap-x-12">
                         <li class="hover:text-black text-slate-700"><a href="#">Purchased Materials</a></li>
-                        <li class="hover:text-black text-slate-700"><a href="#">Sold Materials</a></li>
+                        <li class="hover:text-black text-slate-700"><a href="#sold-materials">Sold Materials</a></li>
                         <li class="hover:text-black text-slate-700"><a href="#">Posted Materials</a></li>
                     </ul>
                 </div>

@@ -6,7 +6,7 @@
             <h1 class="text-7xl font-semibold">A broad selection of Learning materials</h1>
             <p class="pt-5 text-lg">Choose from 2500 online materials with new additions published each weeek.</p>
             <div class="mt-10">
-                <a href="{{ url('/resource')}}">
+                <a href="{{ url('/resources/create')}}">
                     <button class="outline outline-1 rounded-full py-2 px-6 mr-3 text-white bg-black hover:shadow-xl transition-all duration-500 ease-in-out">Sell Materials</button>
                 </a>
 
