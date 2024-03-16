@@ -35,42 +35,6 @@ class ResourceController extends Controller
      */
     public function store(StoreResourceRequest $request)
     {
-        //
-
-        // $customRules = [
-        //     'category' => ['required', 'string', function ($attribute, $value, $fail) {
-        //         $allowedCategories = ['engineering', 'science', 'software'];
-
-        //         if (!in_array($value, $allowedCategories)) {
-        //             $fail($attribute . 'is invalid');
-        //         }
-        //     }],
-        //     'department' => ['required', 'array', 'min:1'],
-        //     'department.*' => ['string'],
-        // ];
-        // //dd($request->all());
-        // //dd($request->request);
-
-        // $validatedData = $request->validate([
-        //     'title' => 'required|string',
-        //     'description' => 'required|string',
-        //     'price' => 'required|numeric',
-        //     'image' => 'required|image',
-        //     'resource_file' => 'required|file',
-        //     'category' => $customRules['category'],
-        //     'course' => 'required|string',
-        //     'department' => $customRules['department'],
-        // ]);
-
-        // //dd($request->all());
-        // //dd($validatedData);
-
-
-        // $imagePath = $request->file('image')->store('public/file_store/images');
-        // $validatedData['image'] = $imagePath;
-
-        // $resourceFilePath = $request->file('resource_file')->store('public/file_store/resources');
-        // $validatedData['resource_file'] = $resourceFilePath;
 
         $validatedData = $request->validated();
         $imagePath = $request->file('image')->store('public/file_store/images');
