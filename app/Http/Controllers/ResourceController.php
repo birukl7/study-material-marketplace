@@ -59,7 +59,7 @@ class ResourceController extends Controller
 
         $cat = Category::find($category_id);
         $resource->category()->save($cat);
-        Auth::user()->resources()->save($resource);
+        Auth::user()->resourcesz()->save($resource);
         return redirect()->back()->with(['success'=> 'resource created successfully']);
     }
 

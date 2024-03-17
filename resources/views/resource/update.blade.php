@@ -1,12 +1,26 @@
 @extends('layouts.layout')
-
 @section('content')
-<div class="pt-24">
-    <form action="{{ route('resources.store')}}" method="POST" class="flex flex-col" enctype="multipart/form-data">
+<div>
+<div class="flex justify-center mt-20 flex-col gap-y-3">
+    <div class="mx-auto">
+        <div><img src="/images/reading.svg" class="w-pic h-pic object-cover" alt=""></div>
+    </div>
+    <h1 class="mx-auto font-semibold text-xl">Programming II</h1>
+    <span class=" mx-auto font-semibold">final exam</span>
+    <span  class=" mx-auto"> <strong>Course:</strong> Introduction to programing</span>
+    <span  class=" mx-auto"> <strong>Departement:</strong> Software Enginnering</span>
+    <span  class=" mx-auto"> <strong>Price:</strong><span class="font-bold"> 50</span> birr</span>
+    <span  class=" mx-auto"> <strong>Description:</strong> birr</span>
+    <span  class=" mx-auto"> <strong>Category:</strong> Enginnering</span>
+    <hr>
+    
+    
+</div>
+<form action="{{ route('resources.store')}}" method="POST" class="flex flex-col" enctype="multipart/form-data">
         @csrf
         <!-- CSRF token for Laravel -->
         <label for="title" class="font-semibold  flex items-center"><span class="mr-5 flex items-center">Title <sup
-                    class="text-red">*</sup></span>
+                    class="text-red-800">*</sup></span>
             <input type="text" id="title" name="title" required value="{{ old('title')}}"
                 class='border-gray-300  focus:border-indigo-500 focus:ring-indigo-500  rounded-md shadow-sm  w-full'></label>
         @error('title')
@@ -96,8 +110,5 @@
             Post
         </button>
     </form>
-    @dump($errors->all())
-
-
 </div>
 @endsection

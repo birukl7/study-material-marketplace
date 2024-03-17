@@ -65,7 +65,6 @@
                             <img src="/images/hollow-start.png" class="w-10 cursor-pointer js-stars" alt="">
                             <img src="/images/hollow-start.png" class="w-10 cursor-pointer js-stars" alt="">
                             <img src="/images/hollow-start.png" class="w-10 cursor-pointer js-stars" alt="">
-
                         </div>
                         <form action="">
                             <input type="number" name="rating" id="rating-number" class="w-12 rounded-md h-auto " max="5" min="1">
