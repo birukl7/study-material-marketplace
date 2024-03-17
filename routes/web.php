@@ -13,6 +13,8 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SellerDashboardController;
 use Illuminate\Support\Facades\Route;
 
+use App\Models\Resource;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,7 +28,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('home');
+    $resources = Resource::all();
+    return view('home' , ['resources' => $resources]);
 });
 
 // Auth routes
