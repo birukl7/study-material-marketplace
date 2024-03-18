@@ -19,6 +19,7 @@ class ResourceController extends Controller
     {
         //
         //return view('resource.create');
+
     }
 
     /**
@@ -59,8 +60,8 @@ class ResourceController extends Controller
 
         $cat = Category::find($category_id);
         $resource->category()->save($cat);
-        Auth::user()->resourcesz()->save($resource);
-        return redirect()->back()->with(['success'=> 'resource created successfully']);
+        Auth::user()->resources()->save($resource);
+        return redirect('dashboard')->with(['success'=> 'resource created successfully']);
     }
 
     /**
