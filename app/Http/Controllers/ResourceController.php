@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Resource;
 use Carbon\Carbon;
 use Dotenv\Exception\ValidationException;
+use Illuminate\Support\Facades\Storage;
 
 class ResourceController extends Controller
 {
@@ -38,11 +39,26 @@ class ResourceController extends Controller
     {
 
         $validatedData = $request->validated();
+
+        if (!Storage::exists('public/file_store/images')) {
+            Storage::makeDirectory('public/file_store/images');
+        }
+        if (!Storage::exists('public/file_store/resources')) {
+            Storage::makeDirectory('public/file_store/resources');
+        }
+
+        if (!Storage::exists('public/file_store/previews')) {
+            Storage::makeDirectory('public/file_store/previews');
+        }
+
         $imagePath = $request->file('image')->store('public/file_store/images');
         $validatedData['image'] = $imagePath;
 
         $resourceFilePath = $request->file('resource_file')->store('public/file_store/resources');
         $validatedData['resource_file'] = $resourceFilePath;
+
+        $previewFilePath = $request->file('preview_file')->store('public/file_store/previews');
+        $validatedData['preview_file'] = $resourceFilePath;
 
         $category = $validatedData['category'];
         $category_id = Category::where('name', $category)->first()->id;
@@ -53,6 +69,7 @@ class ResourceController extends Controller
             'price' => $validatedData['price'],
             'image' => $imagePath,
             'resource_file' => $resourceFilePath,
+            'preview_file' => $previewFilePath,
             'category_id' => $category_id,
             'seller_id' => Auth::user()->id,
             'upload_date' => Carbon::now()->format('Y-m-d'),
@@ -61,7 +78,7 @@ class ResourceController extends Controller
         $cat = Category::find($category_id);
         $resource->category()->save($cat);
         Auth::user()->resources()->save($resource);
-        return redirect('dashboard')->with(['success'=> 'resource created successfully']);
+        return redirect('dashboard')->with(['success' => 'resource created successfully']);
     }
 
     /**
@@ -70,6 +87,8 @@ class ResourceController extends Controller
     public function show(string $id)
     {
         //
+        $res = Resource::find($id);
+        return view('resource.preview', ['resource' => Resource::find($id)]);
     }
 
     /**

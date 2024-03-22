@@ -48,4 +48,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Resource::class, 'seller_id');
     }
+
+    public function purchases() : HasMany
+    {
+        return $this->hasMany(Purchase::class, 'buyer_id');
+    }
 }

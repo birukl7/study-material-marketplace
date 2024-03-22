@@ -84,19 +84,27 @@
            <div class="text-red-500"> {{ $message }} </div> 
         @enderror
 
+        <label for="preview_file" class="font-semibold">Upload Preview File<sup>*</sup> </label>
+        <input type="file" id="preview_file" name="preview_file" accept="*" required><br>
+        @error('preview_file')
+           <div class="text-red-500"> {{ $message }} </div> 
+        @enderror
+
         <label for="resource_file" class="font-semibold">Upload File<sup>*</sup> </label>
         <input type="file" id="resource_file" name="resource_file" accept="*" required><br>
         @error('resource_file')
            <div class="text-red-500"> {{ $message }} </div> 
         @enderror
 
+        <br>
+        
 
         <button type="submit"
             class="bg-black text-white rounded-full py-2 px-4 transition duration-500 hover:bg-white hover:text-black w-60">
             Post
         </button>
     </form>
-    @dump($errors->all())
+    {{-- @dump($errors->all()) --}}
 
 
 </div>

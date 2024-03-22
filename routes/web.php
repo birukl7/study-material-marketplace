@@ -29,7 +29,7 @@ use App\Models\Resource;
 
 Route::get('/', function () {
     $resources = Resource::all();
-    return view('home' , ['resources' => $resources]);
+    return view('home.home' , ['resources' => $resources]);
 });
 
 // Auth routes

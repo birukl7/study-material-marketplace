@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('categories', function (Blueprint $table) {
+        Schema::table('resources', function (Blueprint $table) {
             //
-            $table->foreignId('resource_id')->constrained('resources')->cascadeOnDelete();
+            $table->text('description')->change();
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('categories', function (Blueprint $table) {
+        Schema::table('resources', function (Blueprint $table) {
             //
         });
     }
