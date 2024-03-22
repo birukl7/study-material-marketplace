@@ -70,7 +70,7 @@
             </div> --}}
 
             @foreach ($resources as $resource)
-                @include('home_item', ['resource' => $resource])
+                @include('home.home_item', ['resource' => $resource])
             @endforeach
 
         </div>

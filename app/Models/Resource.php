@@ -17,6 +17,7 @@ class Resource extends Model
         'price',
         'image',
         'resource_file',
+        'preview_file',
         'category_id',
         'seller_id',
         'upload_date',

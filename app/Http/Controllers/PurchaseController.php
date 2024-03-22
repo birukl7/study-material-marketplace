@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Purchase;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PurchaseController extends Controller
 {
@@ -28,6 +31,24 @@ class PurchaseController extends Controller
     public function store(Request $request)
     {
         //
+        
+        $request->validate([
+            'resource_id' => 'required|integer',
+            'purchase_date' => 'required|date', 
+            'buyer_id' => 'required',
+        ]);
+        
+        $data['resource_id'] = $request->input('resource_id');
+        $data['buyer_id'] = Auth::user()->id ;
+        $data['purchase_date'] = Carbon::now()->format('Y-m-d');
+
+        $purchase = Purchase::create($data);
+
+        if ($purchase) {
+            $purchase->buyer()->save(Auth::user());
+            $purchase->resource()->save($data['resource_id']);
+            return redirect('back')->with('success', 'purchase performed successfully');
+        }
     }
 
     /**
